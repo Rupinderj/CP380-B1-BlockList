@@ -47,6 +47,16 @@ namespace CP380_B1_BlockList.Models
         public void Mine(int difficulty)
         {
             // TODO
+            string startingWith =new('C', difficulty);
+            while (true)
+            {
+                Nonce++;
+                Hash = CalculateHash();
+                if(Hash.startingWith(startingWith))
+                {
+                    break;
+                }
+            }
         }
     }
 }
